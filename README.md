@@ -1,1 +1,2 @@
-# ETEC-Project
+# ETEC Project
+HTML/CSS/TAILWIND
