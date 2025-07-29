@@ -58,48 +58,44 @@
         />
 
         <!-- Nav Links -->
-        <div class="flex w-full mt-4  justify-around items-center md:p-10 md:w-[70%] md:mt-0">
-           <ul class="hidden md:flex flex-row gap-8 text-center md:text-left mt-4 sm:mt-0">
-            <li>
-              <a
-                href="https://mptc.gov.kh/en/"
-                class="cursor-pointer text-base md:text-xl font-bold text-[#003d7c] hover:text-[#f58220]"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://mptc.gov.kh/en/mptcs-overview/"
-                class="cursor-pointer text-base md:text-xl font-bold text-[#003d7c] hover:text-[#f58220]"
-              >
-                About Us
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://mptc.gov.kh/en/laws-regulations/laws/"
-                class="cursor-pointer text-base md:text-xl font-bold text-[#003d7c] hover:text-[#f58220]"
-              >
-                Laws And Regulations
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://mptc.gov.kh/en/news/tech-news/"
-                class="cursor-pointer text-base md:text-xl font-bold text-[#003d7c] hover:text-[#f58220]"
-              >
-                News
-              </a>
-            </li>
-          </ul>
+      <div class="flex w-full mt-4 justify-around items-center md:p-10 md:w-[70%] md:mt-0">
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex flex-row gap-8 text-center md:text-left mt-4 sm:mt-0">
+          <li>
+            <a href="https://mptc.gov.kh/en/" class="cursor-pointer text-base md:text-xl font-bold text-[#003d7c] hover:text-[#f58220]">Home</a>
+          </li>
+          <li>
+            <a href="https://mptc.gov.kh/en/mptcs-overview/" class="cursor-pointer text-base md:text-xl font-bold text-[#003d7c] hover:text-[#f58220]">About Us</a>
+          </li>
+          <li>
+            <a href="https://mptc.gov.kh/en/laws-regulations/laws/" class="cursor-pointer text-base md:text-xl font-bold text-[#003d7c] hover:text-[#f58220]">Laws And Regulations</a>
+          </li>
+          <li>
+            <a href="https://mptc.gov.kh/en/news/tech-news/" class="cursor-pointer text-base md:text-xl font-bold text-[#003d7c] hover:text-[#f58220]">News</a>
+          </li>
+        </ul>
 
-          <!-- Mobile Menu Icon -->
-          <i
-            class="fa-solid fa-bars text-xl ml-0 text-[#003d7c] hover:text-[#f58220] mt-0 block md:hidden lg:hidden"
-          ></i>
-        </div>
+        <!-- Mobile Toggle Button -->
+        <button id="menuToggle" class="text-xl text-[#003d7c] hover:text-[#f58220] block md:hidden">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
+
+      <!-- Mobile Menu -->
+      <ul id="mobileMenu" class="md:hidden hidden flex-col gap-4 mt-4 px-4">
+        <li>
+          <a href="https://mptc.gov.kh/en/" class="block py-2 font-bold text-[#003d7c] hover:text-[#f58220]">Home</a>
+        </li>
+        <li>
+          <a href="https://mptc.gov.kh/en/mptcs-overview/" class="block py-2 font-bold text-[#003d7c] hover:text-[#f58220]">About Us</a>
+        </li>
+        <li>
+          <a href="https://mptc.gov.kh/en/laws-regulations/laws/" class="block py-2 font-bold text-[#003d7c] hover:text-[#f58220]">Laws And Regulations</a>
+        </li>
+        <li>
+          <a href="https://mptc.gov.kh/en/news/tech-news/" class="block py-2 font-bold text-[#003d7c] hover:text-[#f58220]">News</a>
+        </li>
+      </ul>
     </nav>
 
     <!-- Main Content -->
@@ -313,6 +309,15 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();
+    </script>
+
+    <script>
+      const toggleButton = document.getElementById('menuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      toggleButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
     </script>
   </body>
 </html>
