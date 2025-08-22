@@ -1,6 +1,6 @@
 [build]
-  base = "src"
+  base = "src"          
   publish = "."
 
 [functions]
-  directory = "netlify/functions"  # Path to serverless functions
+  directory = "netlify/functions"  # This should point to where your functions are stored

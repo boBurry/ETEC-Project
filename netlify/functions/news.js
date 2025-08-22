@@ -10,7 +10,7 @@ exports.handler = async (event, context) => {
     const response = await axios.get(url);  // Fetch news from NewsAPI
     return {
       statusCode: 200,
-      body: JSON.stringify(response.data),  // Return data as JSON
+      body: JSON.stringify(response.data),  // Return the data as JSON
     };
   } catch (error) {
     console.error('Error fetching news:', error);
