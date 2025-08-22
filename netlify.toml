@@ -1,6 +1,6 @@
 [build]
   base = "src"
-  publish = "src/src"
+  publish = "src"
 
 [functions]
   directory = "netlify/functions"  # Path to serverless functions
