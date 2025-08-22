@@ -1,6 +1,6 @@
 [build]
-  functions = "netlify/functions"
-  publish = "src"  # Assuming your static files (index.html) are in the `src/` folder
+  base = "src"
+  publish = "src/src"
 
-[[plugins]]
-  package = "@netlify/plugin-functions-core"
+[functions]
+  directory = "netlify/functions"  # Path to serverless functions
