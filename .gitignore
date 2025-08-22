@@ -1,3 +1,19 @@
-# Ignore environment variable files
-.env
+# Node modules
 node_modules/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# Dependency directories
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Vercel specific ignore
+/.vercel
+
+# Other files and directories to ignore
+.DS_Store
