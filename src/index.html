@@ -329,32 +329,28 @@
     </script>
 
     <script>
-      const apiKey = '35b50d1c79b84a4f882630adeb35ee7c'; // Replace with your News API key
-
-      // Fetch the latest news from Cambodia using the News API
-      fetch(`https://newsapi.org/v2/everything?q=cambodia&apiKey=${apiKey}`)
-      .then(response => response.json())
-      .then(data => {
-        // Check if data.articles exists and is an array
-        if (data.articles && Array.isArray(data.articles)) {
+      // Fetch news data from the serverless function (Vercel API route)
+      fetch('/api/news')
+        .then(response => response.json())
+        .then(data => {
           const newsContainer = document.getElementById('news-container');
+
           data.articles.slice(0, 6).forEach(article => {
             const newsElement = document.createElement('div');
             newsElement.classList.add('w-full', 'p-4', 'bg-white', 'shadow-md', 'rounded-lg');
             
+            const imageUrl = article.urlToImage || 'https://via.placeholder.com/600x400?text=No+Image+Available';
+
             newsElement.innerHTML = `
-              <img class="w-full h-40 object-cover mb-4" src="${article.urlToImage || 'https://via.placeholder.com/600x400?text=No+Image+Available'}" alt="news-image">
+              <img class="w-full h-40 object-cover mb-4" src="${imageUrl}" alt="news-image">
               <h3 class="font-bold text-xl">${article.title}</h3>
               <p class="text-sm mt-2">${article.description}</p>
               <a href="${article.url}" target="_blank" class="text-blue-500 mt-2 block">Read more</a>
             `;
             newsContainer.appendChild(newsElement);
           });
-        } else {
-          console.error('No articles found or API response is malformed:', data);
-        }
-      })
-      .catch(error => console.error('Error fetching news:', error));
+        })
+        .catch(error => console.error('Error fetching news:', error));
     </script>
   </body>
 </html>
