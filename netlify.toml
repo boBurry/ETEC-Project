@@ -1,0 +1,6 @@
+[build]
+  functions = "netlify/functions"
+  publish = "src"  # Assuming your static files (index.html) are in the `src/` folder
+
+[[plugins]]
+  package = "@netlify/plugin-functions-core"

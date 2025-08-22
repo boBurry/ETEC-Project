@@ -330,8 +330,8 @@
     </script>
 
     <script>
-      fetch('etec-project-one.vercel.app/api/news')  // Update this with your live Vercel URL
-      .then(response => response.json())  // Parse the response to JSON
+      fetch('https://etec-web-project.netlify.app/.netlify/functions/news')  // Live backend URL
+      .then(response => response.json())
       .then(data => {
         const newsContainer = document.getElementById('news-container');
 
