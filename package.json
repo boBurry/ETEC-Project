@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@netlify/functions": "^4.2.2",
     "@tailwindcss/cli": "^4.1.11",
     "axios": "^1.11.0",
     "cors": "^2.8.5",

@@ -17,3 +17,6 @@ yarn-error.log*
 
 # Other files and directories to ignore
 .DS_Store
+
+# Local Netlify folder
+.netlify
