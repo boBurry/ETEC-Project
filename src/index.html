@@ -333,7 +333,7 @@
 
       // Fetch the latest news from Cambodia using the News API
       fetch(`https://newsapi.org/v2/everything?q=cambodia&apiKey=${apiKey}`)
-      .thne(response => response.json())
+      .then(response => response.json())
       .then(data => {
         // Check if data.articles exists and is an array
         if (data.articles && Array.isArray(data.articles)) {
